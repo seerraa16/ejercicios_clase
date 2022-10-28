@@ -1,0 +1,13 @@
+strategy1 = lambda x: x.lower()
+strategy2 = lambda x: x.upper()
+
+class StrategyManager:
+	def bind(self, func):
+		self.execute = func
+
+manager = StrategyManager()
+manager.bind(strategy1)
+manager.execute('Donnée')
+manager.bind(strategy2)
+manager.execute('Donnée')
+

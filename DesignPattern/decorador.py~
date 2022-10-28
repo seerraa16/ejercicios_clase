@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+
+def decorator(param):
+	def wrapper(func):
+		def wrapped(arg):
+			result = func(arg)
+			return result > param and result or param
+		return wrapped
+	return wrapper
+
+@decorator(20)
+def calcul(arg):
+	return arg
+
+calcul(40)
+calcul(10)
+

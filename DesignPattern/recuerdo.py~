@@ -1,0 +1,26 @@
+class Current:
+	def __init__(self, state):
+		class Recuerdo:
+			state = None
+		self.state = state
+		self.recuerdo = Recuerdo()
+	def setState(self, state):
+		self.recuerdo.state, self.state = self.state, state
+	def resetState(self):
+		state = self.recuerdo.state
+		if state is None:
+			print("No es posible volver atrás")
+		self.recuerdo.state, self.state = None, self.recuerdo.state
+
+c = Current('1')
+print(c.state)
+c.setState('2')
+print(c.state)
+c.resetState()
+print(c.state)
+c.setState('3')
+print(c.state)
+c.resetState()
+print(c.state)
+c.resetState()
+

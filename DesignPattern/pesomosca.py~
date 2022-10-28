@@ -1,0 +1,31 @@
+#!/usr/bin/python3
+
+class A:
+	def __init__(self, name):
+		self.name = name
+	def sayHello(self):
+		return 'Hello %s' % self.name
+
+class B:
+	def sayHello(self, name):
+		return 'Hello %s' % name
+
+class C:
+	@classmethod
+	def sayHello(cls, name):
+		return 'Hello %s' % name
+
+class D:
+	def sayHello(name):
+		return 'Hello %s' % name
+
+a = A('World')
+a.sayHello()
+
+b = B()
+b.sayHello('World')
+
+C.sayHello('World')
+
+D.sayHello('World')
+
